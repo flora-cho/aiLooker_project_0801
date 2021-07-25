@@ -4,11 +4,11 @@ const e = React.createElement;
 function App() {
   const [username, setUsername] = React.useState("");
   const [password, setPassword] = React.useState("");
-  const [message, setMessage] = React.useState("");
+  const [message , setMessage ] = React.useState("");
 
   const success = async (text)=> {
     console.log("Yeah! Authenticated!");
-    await localStorage.setItem("salesToken", text.access);
+    await localStorage.setItem("aiLookerToken", text.access);
     window.location = "/";
   };
 

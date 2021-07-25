@@ -25,15 +25,15 @@ const login_api = async (username, password, success, fail) => {
   }
 };
 
-const get_orders_api = async (pageNo="", success, fail) => {
-  const token = await localStorage.getItem("salesToken");
+const get_aiLookers_api = async (pageNo="", success, fail) => {
+  const token = await localStorage.getItem("aiLookerToken");
   if (token === null) {
     console.log("No credentials found, redirecting...");
     window.location = "/login";
     return [];
   }
   const response = await fetch(
-        `/api/orders/?page_no=${pageNo}`,
+        `/api/aiLookers/?page_no=${pageNo}`,
         {
             method: 'GET',
             headers: {
@@ -59,15 +59,15 @@ const get_orders_api = async (pageNo="", success, fail) => {
   }
 };
 
-const post_order_api = async (data, success) => {
-  const token = await localStorage.getItem("salesToken");
+const post_aiLooker_api = async (data, success) => {
+  const token = await localStorage.getItem("aiLookerToken");
   if (token === null) {
     console.log("No credentials found, redirecting...");
     window.location = "/login";
     return [];
   }
   const response = await fetch(
-        `/api/orders/`,
+        `/api/aiLookers/`,
         {
             method: 'POST',
             headers: {
@@ -94,15 +94,15 @@ const post_order_api = async (data, success) => {
   }
 };
 
-const put_order_api = async (saleId, data, success) => {
-  const token = await localStorage.getItem("salesToken");
+const put_aiLooker_api = async (advtno, data, success) => {
+  const token = await localStorage.getItem("aiLookerToken");
   if (token === null) {
     console.log("No credentials found, redirecting...");
     window.location = "/login";
     return [];
   }
   const response = await fetch(
-        `/api/orders/${saleId}/`,
+        `/api/aiLookers/${advtno}/`,
         {
             method: 'PUT',
             headers: {
@@ -129,15 +129,15 @@ const put_order_api = async (saleId, data, success) => {
   }
 };
 
-const delete_order_api = async (saleId, success) => {
-  const token = await localStorage.getItem("salesToken");
+const delete_aiLooker_api = async (advtno, success) => {
+  const token = await localStorage.getItem("aiLookerToken");
   if (token === null) {
     console.log("No credentials found, redirecting...");
     window.location = "/login";
     return [];
   }
   const response = await fetch(
-        `/api/orders/${saleId}/`,
+        `/api/aiLookers/${advtno}/`,
         {
             method: 'DELETE',
             headers: {
