@@ -1,5 +1,6 @@
-from rest_framework import serializers
+from rest_framework      import serializers
 from aiLooker_app.models import Tbladvtbsc
+from aiLooker_app.models import Tblphnnolist
 
 class TbladvtbscSerializer(serializers.ModelSerializer):
     class Meta:
@@ -8,3 +9,11 @@ class TbladvtbscSerializer(serializers.ModelSerializer):
             'advttpcd',
         )
         model = Tbladvtbsc
+
+class TblphnnolistSerializer(serializers.ModelSerializer):
+    class Meta:
+        fields = (
+            'phnno',
+            'whtlistyn',
+        )
+        model = Tblphnnolist        

@@ -37,7 +37,7 @@ const get_aiLookers_api = async (pageNo="", success, fail) => {
         {
             method: 'GET',
             headers: {
-                'Content-Type': 'Application/JSON',
+                'Content-Type': 'Application/JSON', 
                 'Authorization': `Bearer ${token}`,
             }
         }

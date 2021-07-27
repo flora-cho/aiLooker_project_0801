@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 from datetime import timedelta
 from pathlib import Path
 import os
+#import dj_database_url
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -22,8 +24,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'qwf=u88ofhjss%c^!pkvahk((@0ujud-zpb6-ko1k85l-p44dp'
+#SECRET_KEY = os.environ.get('DJNAGO_SECRET_KEY', 'qwf=u88ofhjss%c^!pkvahk((@0ujud-zpb6-ko1k85l-p44dp')
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
+#DEBUG = False
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
@@ -50,6 +55,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+  #  'whitenoise.middleware.WhiteNoisteMiddleware',
+
 ]
 
 ROOT_URLCONF = 'aiLooker_api.urls'
@@ -83,6 +90,9 @@ DATABASES = {
     }
 }
 
+ #db_from_env = dj_database_url.config(conn_max_age = 50)
+ #DATABASES['default'].update(db_from_env)
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -115,7 +125,7 @@ REST_FRAMEWORK = {
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Seoul'
 
 USE_I18N = True
 
