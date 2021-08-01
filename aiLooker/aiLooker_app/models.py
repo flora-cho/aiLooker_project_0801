@@ -22,6 +22,6 @@ class Tbladvtbsc(models.Model):
         ordering = ["-advtno"]
 
 class Tblphnnolist(models.Model):
-    phnno      = models.IntegerField(max_length=20, primary_key=True)        # 전화번호
+    phnno      = models.IntegerField(default=0, primary_key=True)            # 전화번호
     whtlistyn  = models.CharField(max_length=1)                              # 화이트리스트여부
 
